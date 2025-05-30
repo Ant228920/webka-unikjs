@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+    background: #f0f2f5; margin: 0;
+    padding: 2rem;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.tab {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.tab.active {
+    background: white;
+    border-bottom: none;
+}
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-group input, select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-group input.valid {
+    border-color: green;
+}
+.form-group input.invalid {
+    border-color: red;
+}
+.error-msg {
+    color: red;
+    font-size: 0.85rem;
+    display: none;
+}
+.success-msg {
+    color: green;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+.toggle-password {
+    cursor: pointer;
+}
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.radio-options {
+    display: flex;
+    gap: 10px;
+    width: 10%;
+}
+
+.radio-option{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    .radio-options {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .radio-option {
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}

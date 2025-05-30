@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration/Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="tabs">
+  <div class="tab active" onclick="showForm('signup')">Signup</div>
+  <div class="tab" onclick="showForm('login')">Login</div>
+</div>
+
+<div class="form-container">
+  <form id="signupForm" method="post">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName">
+      <div class="error-msg" id="firstNameError">Must be 3–15 characters.</div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName">
+      <div class="error-msg" id="lastNameError">Must be 3–15 characters.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+      <div class="error-msg" id="emailError">Enter a valid email.</div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone">
+      <div class="error-msg" id="phoneError">Enter a valid UA phone number (+380...)</div>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+      <div class="error-msg" id="dobError">You must be at least 12 years old. Future dates not allowed.</div>
+    </div>
+    <div class="form-group">
+      <label>Sex</label>
+      <div class="radio-options">
+        <div class="radio-option">
+          <label for="male">Male</label>
+          <input type="radio" name="sex" value="male" id="male">
+        </div>
+        <div class="radio-option">
+          <label for="female"> Female</label>
+          <input type="radio" name="sex" value="female" id="female">
+        </div>
+      </div>
+
+      <div class="error-msg" id="sexError">Please select your gender.</div>
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select id="country" name="country" onchange="populateCities()">
+        <option value="">Select Country</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="Poland">Poland</option>
+      </select>
+      <div class="error-msg" id="countryError">Please select a country.</div>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <select id="city" name="city" disabled></select>
+      <div class="error-msg" id="cityError">Please select a city.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password">
+        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+      </div>
+      <div class="error-msg" id="passwordError">At least 6 characters.</div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
+      </div>
+      <div class="error-msg" id="confirmPasswordError">Passwords must match.</div>
+    </div>
+    <button type="submit">Sign up</button>
+    <div class="success-msg" id="signupSuccess"></div>
+  </form>
+
+  <form id="loginForm" class="hidden" method="post">
+    <div class="form-group">
+      <label for="loginUsername">Username</label>
+      <input type="text" id="loginUsername" name="loginUsername">
+      <div class="error-msg" id="loginUsernameError">Required.</div>
+    </div>
+    <div class="form-group">
+      <label for="loginPassword">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="loginPassword" name="loginPassword">
+        <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+      </div>
+      <div class="error-msg" id="loginPasswordError">At least 6 characters.</div>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" id="rememberMe"> Remember Me</label>
+    </div>
+    <button type="submit">Login</button>
+    <div class="success-msg" id="loginSuccess"></div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
