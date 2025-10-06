@@ -95,7 +95,7 @@ function task4(){
 
     console.log(students);
 
-    students = students.sort((a, b) => a.age - b.age)
+    students = students.sort((a, b) => b.age - a.age)
 
     console.log(students);
 
@@ -120,7 +120,7 @@ function task5(){
 
     console.log(nums);
 
-    nums.splice(0,3)
+    nums.splice(0,3);
 
     console.log(nums);
 }
@@ -133,7 +133,7 @@ function task6(){
     }
 
     function removeBook(title){
-        books = books.filter(a => a.title !==title);
+       return books = books.filter(a => a.title !==title);
     }
 
     function findBooksByAuthor(author){
@@ -207,7 +207,7 @@ function task7(){
 // task1(["Apple", "Banana", "Cherry"])
 // task2(["Blue", "Black", "Blue","Purple", "Orange"])
 // task3();
-// task4();
+task4();
 // task5();
 // task6();
-task7()
+// task7()
